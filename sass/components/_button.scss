@@ -1,0 +1,82 @@
+.btn,
+.btn:link,
+.btn:visited {
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.3rem 2.7rem;
+  display: inline-block;
+  border-radius: 10rem;
+  font-size: 1.3rem;
+  opacity: 1;
+  font-weight: 500;
+  transition: all 0.2s;
+  animation: moveToBottom 1s ease-out 0.75s;
+  -webkit-animation: moveToBottom 1s ease-out 0.3s;
+  animation-fill-mode: backwards;
+}
+.btn-white {
+  background-color: $color-text-light;
+  color: rgba(0, 0, 0, 0.795);
+}
+.btn-green {
+  background-color: $color-primary;
+  color: rgba($color-text-light, 0.795);
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $color-text-light;
+  z-index: -1;
+  border-radius: 10rem;
+  transition: all 0.4s;
+}
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.363);
+  &::after {
+    transform: scale(1.4, 1.6);
+    opacity: 0;
+  }
+}
+.btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.363);
+}
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $font-size-default;
+    color: $color-primary-dark;
+    text-decoration: none;
+    display: inline-block;
+    padding: 4px;
+    border-bottom: 1px solid $color-primary-dark;
+    transition: all 0.3s;
+  }
+  &:hover {
+    background-color: $color-primary-dark;
+    color: white;
+    transform: translateY(-2px);
+  }
+  &:active {
+    transform: translateY(0);
+  }
+}
+.btn-explore:link,
+.btn-explore:visited {
+  padding: 2rem 6rem;
+  text-align: center;
+}
+.btn-green::after {
+  background-color: $color-primary;
+}
+button {
+  border: none;
+}
